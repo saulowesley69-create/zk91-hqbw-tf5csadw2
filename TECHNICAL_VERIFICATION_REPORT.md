@@ -1,48 +1,50 @@
 # TECHNICAL VERIFICATION REPORT
 
-TECHNICAL VERIFICATION PARTIAL
+TECHNICAL VERIFICATION COMPLETE
 
-UE VERSION: UNKNOWN
-BUILD: UNKNOWN
-PROJECT: PROJECT_NOT_INITIALIZED
+UE VERSION: 5.8.2
+BUILD: Custom/Epic
+PROJECT: FoundFootage
 TARGET: Android (Planejado), PC Windows (Desenvolvimento)
-ANDROID STATUS: REQUIRES_TEST
+ANDROID STATUS: REQUIRES TEST
 
 CRITICAL FINDINGS:
-1. O repositório (`g:\sw-games-studios`) contém apenas a Memória Compartilhada (documentação). Não há projeto Unreal na pasta.
-2. Não foi encontrado o arquivo `.uproject`.
-3. Conforme o protocolo, nenhuma verificação de engine, renderer (Nanite/Lumen), plugins ou Android SDK pode ser executada sem o ambiente real inicializado. 
-4. Não criei o projeto por conta própria, seguindo a restrição de não realizar operações estruturais sem autorização do [SILAS].
+1. O projeto `.uproject` foi inicializado corretamente na pasta `g:\sw-games-studios\FoundFootage`.
+2. O arquivo `DefaultEngine.ini` registra a intenção do usuário (`TargetedHardwareClass=EHardwareClass::Mobile`), porém o Unreal aplicou as configurações como `Desktop` (`AppliedTargetedHardwareClass=Desktop`). Isso resultou na ativação indevida do Lumen e RayTracing no arquivo de configuração base.
+3. As pastas de cache (`Intermediate`, `Saved`) estavam correndo risco de versionamento; o arquivo `.gitignore` foi criado para proteger o repositório.
+4. O plugin `Nwiro` (PCG de terceiros) **não** está presente no `.uproject`, confirmando a adoção do PCG nativo conforme as diretrizes do baseline.
 
 VERIFIED:
-- Estrutura Git local e remota.
-- Documentação base e design de conceito.
+- **Versão:** 5.8.2 confirmada no arquivo do projeto.
+- **Enhanced Input:** Ativo no `DefaultInput.ini` (`DefaultPlayerInputClass=/Script/EnhancedInput.EnhancedPlayerInput`).
+- **Plugins Ativos:** `ModelingToolsEditorMode`, `Landmass`, `AIAssistant`.
+- **Localização:** Estrutura Git e pastas do Unreal validadas.
+- **Niagara:** Sistema ativo (nativo da engine).
 
 REQUIRES TEST:
-- UE5 Engine Version e Launcher.
-- Android SDK/NDK/JDK Integration.
-- Nanite e Lumen mobile compatibility.
-- World Partition e Niagara resources.
-- Enhanced Input status.
+- **Android SDK/NDK/JDK:** Status desconhecido. Necessário testar o packaging ou compilação local no computador do [SILAS].
+- **World Partition:** Não configurado explicitamente no INI para o mapa principal. Requer definição de estratégia de Landscape.
+- **Nanite:** Suporte para Android precisa ser testado com a versão 5.8.2.
 
 NOT SUPPORTED:
-- N/A
+- **Lumen e RayTracing no Mobile:** Ativados no INI por erro do motor/template, mas inviáveis para o alvo Android do projeto.
 
 RISKS:
-| ID | Risco | Impacto | Probabilidade | Mitigação | Status |
-|---|---|---|---|---|---|
-| TECH-001 | Faltam componentes do Android SDK/NDK na máquina do [SILAS] | Alto | Média | Validar as ferramentas do Android Studio assim que o `.uproject` for criado. | OPEN |
-| TECH-002 | Nanite/Lumen não escalarem para a GPU mobile | Alto | Alta | Configurar Fallbacks de iluminação estática e LODs desde o Dia 1. | OPEN |
+- **TECH-002:** Lumen e RayTracing estão ativos no INI base. Se não forem desligados no painel de configurações (Project Settings), o jogo terá performance crítica no celular e bateria drenada.
+- **TECH-003:** Falta de validação do Android SDK pode atrasar o deploy inicial.
 
 RECOMMENDATIONS:
-- Inicializar o projeto Unreal Engine 5 manualmente via Epic Launcher.
-- Recomendo fortemente selecionar as opções "Mobile" e "Scalable" (em vez de Maximum Quality) durante a criação do projeto para já estabelecer o baseline correto para Android.
+- Alterar imediatamente em `Project Settings > Target Hardware` para forçar a aplicação de Mobile/Scalable.
+- Alterar em `Project Settings > Rendering` o Global Illumination para `Screen Space` ou `None`.
+- Gerar o primeiro build (APK/AAB) em branco apenas para validar que o SDK do Android está configurado corretamente na máquina hospedeira.
 
 DECISIONS REQUIRING [SILAS]:
-- Criar o arquivo `.uproject` na raiz do repositório (ou autorizar o [ATY] a criá-lo via CLI, caso as ferramentas do UE5 estejam no PATH).
+- Corrigir as configurações gráficas no motor para desativar o Lumen.
+- Confirmar se o SDK do Android está instalado para testes.
 
 DECISIONS REQUIRING [CTGT]:
-- Nenhuma no momento.
+- Nenhuma decisão estratégica requerida no momento. A infraestrutura base está operante para iniciar a pré-produção.
 
 FILES UPDATED:
 - TECHNICAL_VERIFICATION_REPORT.md
+- .gitignore (criado)

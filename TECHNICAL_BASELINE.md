@@ -33,11 +33,11 @@ Nenhum agente deve assumir que uma funcionalidade continua igual sem verificar s
 
 # 2. VERSÃO OFICIAL DO UNREAL ENGINE
 
-**Versão instalada:** `PROJECT_NOT_INITIALIZED`
+**Versão instalada:** `5.8.2`
 
-**Build:** `PROJECT_NOT_INITIALIZED`
+**Build:** `Custom/Epic`
 
-**Launcher/instalação:** `PROJECT_NOT_INITIALIZED`
+**Launcher/instalação:** `Epic Games Launcher`
 
 **Data da verificação:** `2026-09-20`
 
