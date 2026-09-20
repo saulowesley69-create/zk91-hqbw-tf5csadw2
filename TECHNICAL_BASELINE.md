@@ -33,13 +33,13 @@ Nenhum agente deve assumir que uma funcionalidade continua igual sem verificar s
 
 # 2. VERSÃO OFICIAL DO UNREAL ENGINE
 
-**Versão instalada:** `A VERIFICAR PELO [ATY]`
+**Versão instalada:** `PROJECT_NOT_INITIALIZED`
 
-**Build:** `A VERIFICAR`
+**Build:** `PROJECT_NOT_INITIALIZED`
 
-**Launcher/instalação:** `A VERIFICAR`
+**Launcher/instalação:** `PROJECT_NOT_INITIALIZED`
 
-**Data da verificação:** `A PREENCHER`
+**Data da verificação:** `2026-09-20`
 
 ### Procedimento obrigatório
 

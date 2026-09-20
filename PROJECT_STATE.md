@@ -9,6 +9,7 @@
 - **Arquitetura:** Phenomenon System (Pendente de Especificação)
 - **Gameplay:** EXPLORAR → DETECTAR → INVESTIGAR → REGISTRAR → SOBREVIVER
 - **Monetização:** Ads/IAP (Potencial verificado)
-- **Produção:** AGUARDANDO INICIALIZAÇÃO DO .UPROJECT
+- **Produção:** NÃO INICIADA
+- **Technical Baseline:** PENDENTE DE VERIFICAÇÃO DO [ATY] (Aguardando `.uproject`)
 
 *Conceito base de Game Design gerado por [CTGT] e aprovado por [SILAS].*
