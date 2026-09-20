@@ -2,9 +2,9 @@
 
 Este documento preserva as propostas, alternativas, riscos e decisões técnicas tomadas durante o projeto, garantindo a continuidade da memória da equipe de forma agnóstica a agentes específicos.
 
-## DECISÕES PENDENTES DE REVISÃO (CLAUDE)
+## DECISÕES PENDENTES DE APROVAÇÃO (SILAS)
 
-*(Decisões estruturais tomadas durante a indisponibilidade operacional do Claude serão listadas aqui)*
+*(Decisões de alto impacto ou escopo que necessitam da autorização final do Diretor antes da implementação irreversível)*
 
 - *Nenhuma decisão pendente no momento.*
 

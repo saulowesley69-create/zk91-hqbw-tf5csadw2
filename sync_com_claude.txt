@@ -1,6 +1,0 @@
-# SYNC COM CLAUDE
-Arquivo operacional de comunicação técnica entre Antigravity e Claude.
-
----
-[DATA: 2026-09-20]
-STATUS: Repositório e estrutura de documentação base inicializados. Aguardando definição do conceito do jogo. Nenhuma implementação de código iniciada.
