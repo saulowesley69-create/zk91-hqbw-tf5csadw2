@@ -2,13 +2,13 @@
 
 **Data da última atualização:** 2026-09-20
 
-**Fase Atual:** FASE DE DESCOBERTA
+**Fase Atual:** CONCEITO APROVADO / PRE-PRODUÇÃO
 
-- **Jogo:** Não definido.
-- **Engine:** Não definida.
-- **Arquitetura:** Não definida.
-- **Gameplay:** Não definido.
-- **Monetização:** Em análise.
-- **Produção:** NÃO INICIADA.
+- **Jogo:** Skinwalker Ranch (First-Person Survival Investigation)
+- **Engine:** Unreal Engine 5
+- **Arquitetura:** Phenomenon System (Pendente de Especificação)
+- **Gameplay:** EXPLORAR → DETECTAR → INVESTIGAR → REGISTRAR → SOBREVIVER
+- **Monetização:** Ads/IAP (Potencial verificado)
+- **Produção:** AGUARDANDO INICIALIZAÇÃO DO .UPROJECT
 
-*Aguardando análise de mercado (ChatGPT), análise técnica (Claude) e decisão final (Silas).*
+*Conceito base de Game Design gerado por [CTGT] e aprovado por [SILAS].*
